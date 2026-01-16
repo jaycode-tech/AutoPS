@@ -54,6 +54,7 @@ Thumbs.db
 # BUILD ARTIFACTS
 # Generated distribution files
 # =============================================================================
+site/
 dist/
 build/
 *.zip
