@@ -1,0 +1,33 @@
+{
+    "name": "data_pipeline",
+    "description": "Full data pipeline with ETL and notifications",
+    "triggerType": "Schedule",
+    "cron": "0 * * * *",
+    "tasks": [
+        {
+            "name": "Start",
+            "task": "notify",
+            "params": {
+                "message": "Pipeline starting..."
+            }
+        }
+    ],
+    "workflows": [
+        {
+            "name": "RunETL",
+            "workflow": "etl_pipeline",
+            "dependsOn": [
+                "Start"
+            ]
+        }
+    ],
+    "jobs": [
+        {
+            "name": "Notify",
+            "job": "notify_job",
+            "dependsOn": [
+                "RunETL"
+            ]
+        }
+    ]
+}

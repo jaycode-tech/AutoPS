@@ -1,0 +1,22 @@
+{
+    "pwsh": {
+        "default": "pwsh"
+    },
+    "python": {
+        "default": "python3",
+        "mkdocs_3.13": "./runtimes/python/mkdocs_3.13/bin/python",
+        "ml-jobs": "./runtimes/python/ml-jobs/bin/python",
+        "data-etl": "./runtimes/python/data-etl/bin/python"
+    },
+    "node": {
+        "default": "node",
+        "v18": "./runtimes/node/v18/bin/node",
+        "v20": "./runtimes/node/v20/bin/node"
+    },
+    "java": {
+        "default": "java"
+    },
+    "rust": {
+        "default": "cargo run"
+    }
+}

@@ -1,0 +1,92 @@
+# AutoPS Beta 0.5 - .gitignore
+
+# =============================================================================
+# RUNTIMES & VIRTUAL ENVIRONMENTS
+# Python/Node virtual environments contain large dependency trees
+# =============================================================================
+runtimes/
+runtime/
+venv/
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+
+# =============================================================================
+# SENSITIVE & CONFIDENTIAL FILES
+# Never commit secrets, credentials, or environment configs
+# =============================================================================
+.env
+.env.*
+.env.local
+.env.*.local
+*.env
+secrets/
+credentials/
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+config.local.json
+
+# =============================================================================
+# DATA & LOGS
+# Database files and logs may contain sensitive execution data
+# =============================================================================
+data/
+logs/
+
+# =============================================================================
+# IDE & EDITOR FILES
+# Personal editor settings should not be committed
+# =============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# =============================================================================
+# BUILD ARTIFACTS
+# Generated documentation and distribution files
+# =============================================================================
+docs/site/
+dist/
+build/
+*.zip
+*.tar.gz
+*.whl
+
+# =============================================================================
+# TEMPORARY FILES
+# Transient files created during execution
+# =============================================================================
+tmp/
+temp/
+*.tmp
+*.bak
+*.log
+
+# =============================================================================
+# POWERSHELL SPECIFIC
+# Module installation and cache files
+# =============================================================================
+PSModulePath/
+*.psm1.bak
+
+# =============================================================================
+# OS SPECIFIC
+# Operating system generated files
+# =============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini

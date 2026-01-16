@@ -1,0 +1,89 @@
+{
+    "tasks": {
+        "greet": {
+            "file": "tasks/demo/greet.ps1",
+            "runtime": "pwsh",
+            "description": "Displays a greeting message"
+        },
+        "farewell": {
+            "file": "tasks/demo/farewell.ps1",
+            "runtime": "pwsh",
+            "description": "Displays a farewell message"
+        },
+        "fetch_data": {
+            "file": "tasks/etl/fetch_data.ps1",
+            "runtime": "pwsh",
+            "description": "Simulates fetching data from API"
+        },
+        "transform_data": {
+            "file": "tasks/etl/transform_data.ps1",
+            "runtime": "pwsh",
+            "description": "Transforms fetched data"
+        },
+        "load_data": {
+            "file": "tasks/etl/load_data.ps1",
+            "runtime": "pwsh",
+            "description": "Loads data to destination"
+        },
+        "notify": {
+            "file": "tasks/demo/notify.ps1",
+            "runtime": "pwsh",
+            "description": "Sends notification"
+        },
+        "state_test": {
+            "file": "tasks/tests/state_test.ps1",
+            "runtime": "pwsh",
+            "description": "Tests custom state column"
+        },
+        "retry_test": {
+            "file": "tasks/tests/retry_test.ps1",
+            "runtime": "pwsh",
+            "description": "Tests retry logic"
+        }
+    },
+    "workflows": {
+        "etl_pipeline": {
+            "file": "workflows/etl/etl_pipeline.json",
+            "description": "Extract-Transform-Load pipeline"
+        }
+    },
+    "jobs": {
+        "hello_world": {
+            "file": "jobs/demo/hello_world.json",
+            "description": "Simple hello world job"
+        },
+        "data_pipeline": {
+            "file": "jobs/etl/data_pipeline.json",
+            "description": "Full data pipeline with ETL"
+        },
+        "state_job": {
+            "file": "jobs/tests/state_job.json",
+            "description": "Job to test state logic"
+        },
+        "retry_job": {
+            "file": "jobs/tests/retry_job.json",
+            "description": "Job to test retry logic"
+        },
+        "notify_job": {
+            "file": "jobs/demo/notify_job.json",
+            "description": "Sends completion notification"
+        }
+    },
+    "integrations": {
+        "filesystem": {
+            "type": "LocalFilesystem",
+            "core": true,
+            "description": "Local filesystem access"
+        },
+        "git": {
+            "type": "Git",
+            "core": false,
+            "description": "Git version control"
+        },
+        "http": {
+            "type": "HttpApi",
+            "core": false,
+            "description": "HTTP/REST API access"
+        }
+    }
+}

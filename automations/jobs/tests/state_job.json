@@ -1,0 +1,10 @@
+{
+    "name": "state_job",
+    "description": "Job to test state logic",
+    "tasks": [
+        {
+            "name": "StateTest",
+            "task": "state_test"
+        }
+    ]
+}

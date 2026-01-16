@@ -1,0 +1,12 @@
+{
+    "name": "retry_job",
+    "description": "Job to test retry logic",
+    "tasks": [
+        {
+            "name": "RetryTest",
+            "task": "retry_test",
+            "retries": 4,
+            "retry_delay": 2
+        }
+    ]
+}

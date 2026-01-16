@@ -1,0 +1,14 @@
+{
+    "name": "notify_job",
+    "description": "Sends completion notification",
+    "triggerType": "Manual",
+    "tasks": [
+        {
+            "name": "Complete",
+            "task": "notify",
+            "params": {
+                "message": "Pipeline completed successfully!"
+            }
+        }
+    ]
+}

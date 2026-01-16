@@ -1,0 +1,24 @@
+{
+    "name": "etl_pipeline",
+    "description": "Extract-Transform-Load pipeline workflow",
+    "tasks": [
+        {
+            "name": "Extract",
+            "task": "fetch_data"
+        },
+        {
+            "name": "Transform",
+            "task": "transform_data",
+            "dependsOn": [
+                "Extract"
+            ]
+        },
+        {
+            "name": "Load",
+            "task": "load_data",
+            "dependsOn": [
+                "Transform"
+            ]
+        }
+    ]
+}

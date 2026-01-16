@@ -1,0 +1,26 @@
+{
+    "database": {
+        "provider": "Json",
+        "connectionString": "Data Source=./data/autops.json"
+    },
+    "service": {
+        "pollIntervalSeconds": 5
+    },
+    "integrations": [
+        {
+            "name": "LocalFilesystem",
+            "type": "Core",
+            "testScript": "Test-Path '.'"
+        }
+    ],
+    "logging": {
+        "level": "Info",
+        "directory": "./logs"
+    },
+    "documentation": {
+        "enabled": true,
+        "runtime": "mkdocs_3.13",
+        "configPath": "./mkdocs.yml",
+        "outputPath": "./docs/site"
+    }
+}

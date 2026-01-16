@@ -1,0 +1,85 @@
+site_name: "AutoPS Beta 0.5 Documentation"
+docs_dir: docs/src
+site_dir: docs/site
+use_directory_urls: false
+
+# 1. THEME
+theme:
+  name: material
+  logo: ./assets/AutoPSLogo.png
+  favicon: ./assets/AutoPSLogo.png
+  font:
+    text: Roboto
+    code: Roboto Mono
+  palette:
+    # Light Mode
+    - scheme: default
+      primary: deep purple
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark Mode
+    - scheme: slate
+      primary: deep purple
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - content.code.copy
+    - content.tabs.link
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.highlight
+
+# 2. PLUGINS
+plugins:
+  - search
+  - mermaid2
+
+# 3. MARKDOWN EXTENSIONS
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  # Mermaid Integration (via SuperFences)
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
+  # Emoji Support (Native)
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+# 4. NAVIGATION
+nav:
+  - Home: index.md
+  - Getting Started:
+    - "Installation": "./getting-started/installation.md"
+    - "Quick Start": "./getting-started/quickstart.md"
+  - Core Concepts:
+    - "Tasks": "./concepts/tasks.md"
+    - "Workflows": "./concepts/workflows.md"
+    - "Jobs": "./concepts/jobs.md"
+    - "Manifest": "./concepts/manifest.md"
+  - CLI Reference:
+    - "Commands": "./cli/commands.md"
+    - "Query": "./cli/query.md"
+    - "Logs": "./cli/logs.md"
+  - Integrations:
+    - "Overview": "./integrations/overview.md"
+    - "Filesystem": "./integrations/filesystem.md"
+    - "Git": "./integrations/git.md"
+    - "HTTP": "./integrations/http.md"
+  - Examples:
+    - "ETL Pipeline": "./examples/etl-pipeline.md"
+    - "Retry Logic": "./examples/retry-logic.md"
