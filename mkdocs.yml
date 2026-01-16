@@ -1,6 +1,6 @@
 site_name: "AutoPS Beta 0.5 Documentation"
-docs_dir: docs/src
-site_dir: docs/site
+docs_dir: docs_source/src
+site_dir: docs
 use_directory_urls: false
 
 # 1. THEME
