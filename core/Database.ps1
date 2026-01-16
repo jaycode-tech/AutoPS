@@ -202,6 +202,8 @@ if (-not ([System.Management.Automation.PSTypeName]'AutoPSSqlClient').Type) {
     
         hidden [void] SaveJsonDb([psobject]$db) {
             $path = $this.GetJsonPath()
+            $parent = Split-Path $path -Parent
+            if ($parent -and -not (Test-Path $parent)) { New-Item -ItemType Directory -Path $parent -Force | Out-Null }
             $db | ConvertTo-Json -Depth 6 | Set-Content $path
         }
     
@@ -443,14 +445,19 @@ function Initialize-AutoPSDatabase {
     
     if ($Client.Provider -eq 'Json') {
         $path = $Client.ConnectionString -replace 'Data Source=', ''
-        @{
-            Nodes          = @()
-            Jobs           = @()
-            Workflows      = @()
-            Tasks          = @()
-            TaskExecutions = @()
-            Integrations   = @()
-        } | ConvertTo-Json -Depth 4 | Set-Content $path
+        $parent = Split-Path $path -Parent
+        if ($parent -and -not (Test-Path $parent)) { New-Item -ItemType Directory -Path $parent -Force | Out-Null }
+        
+        if (-not (Test-Path $path)) {
+            @{
+                Nodes          = @()
+                Jobs           = @()
+                Workflows      = @()
+                Tasks          = @()
+                TaskExecutions = @()
+                Integrations   = @()
+            } | ConvertTo-Json -Depth 4 | Set-Content $path
+        }
         return
     }
     
