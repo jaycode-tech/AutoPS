@@ -136,9 +136,13 @@ AutoPS/
 │   ├── workflows/          # Workflow definitions (.json)
 │   └── jobs/               # Job definitions (.json)
 │
-├── docs/                   # Documentation (MkDocs)
-│   ├── src/                # Markdown source
-│   └── site/               # Built HTML (gitignored)
+├── docs/                   # Static HTML site (GitHub Pages)
+│   ├── assets/             # Compiled assets
+│   └── index.html          # Entry point
+│
+├── docs_src/               # Documentation Source (MkDocs)
+│   ├── src/                # Markdown content
+│   └── requirements.txt    # Python dependencies
 │
 ├── runtimes/               # Language runtimes (gitignored)
 │   └── python/
@@ -181,19 +185,19 @@ ExecutionId: abc123-def456...
 
 ## 📚 Documentation
 
-Full documentation is available in the `docs/` directory.
+Full documentation source is in `docs_src/`. The static site is built to `docs/`.
 
 ### Build & Serve Docs
 
 ```bash
 # Install dependencies (one-time)
 python3 -m venv runtimes/python/mkdocs_3.13
-./runtimes/python/mkdocs_3.13/bin/pip install -r docs/requirements.txt
+./runtimes/python/mkdocs_3.13/bin/pip install -r docs_src/requirements.txt
 
 # Serve locally
 ./runtimes/python/mkdocs_3.13/bin/mkdocs serve
 
-# Build static site
+# Build static site (pushes to /docs)
 ./runtimes/python/mkdocs_3.13/bin/mkdocs build
 ```
 
