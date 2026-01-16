@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/src/assets/AutoPSLogo.png" alt="AutoPS Logo" width="120">
+  <img src="docs_src/src/assets/AutoPSLogo.png" alt="AutoPS Logo" width="120">
 </p>
 
 <h1 align="center">AutoPS Beta 0.5</h1>
