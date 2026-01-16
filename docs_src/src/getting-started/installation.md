@@ -37,7 +37,9 @@ AutoPS/
 │   ├── workflows/       # Workflow definitions
 │   └── jobs/            # Job definitions
 ├── data/                # Database storage
-└── logs/                # Log files
+├── logs/                # Log files
+├── docs/                # Static HTML site
+└── docs_src/            # Documentation source
 ```
 
 ## Configuration
